@@ -12,6 +12,8 @@ int main(void) { //define main function
   correctAnswers = 0; //update correctAnswers var
   char answer; //intialize varialbe as character
 
+  printf("Country Quiz:\nThis program will quiz you on which continent 25 different countries are on. You can pick between the following 7 continents:\n\ta: North America\n\tb: South America\n\tc: Africa\n\td: Europe\n\te: Asia\n\tf: Oceania\nEnter the letter (a-f) corresponding with the continent to enter your answer. At the end, the program will tell you how many you got correct and give you a grade.\n\n"); //instructions
+  
   //Question 1:
   printf("1: What continent is Canada in?\na: North America\nb: South America\nc: Africa\nd: Europe\ne: Asia\nf: Oceania\n"); //question
   scanf("%s", &answer); //accepts users answer
