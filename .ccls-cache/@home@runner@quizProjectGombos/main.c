@@ -1,13 +1,14 @@
 /*
-  UB C Programming Project
-  Quiz Project
+  UB C Programming Quiz Project
+  Country Quiz
   Max Gombos
+  3/7/2023
 */
 #include <stdio.h> //import input and output functions
 
 int main(void) { //define main function
   int correctAnswers; //intialize varialbe as integer
-  float correctFloat;
+  float correctFloat; //initialize variable as float
   float grade; //intialize varialbe as float
   correctAnswers = 0; //update correctAnswers var
   char answer; //intialize varialbe as character
@@ -266,7 +267,7 @@ int main(void) { //define main function
   }
 
   if (correctAnswers == 0) {
-    //if the user got 0%:
+    //if the user got 0/25 answers correct:
     //I was having an error when user gets 0/25, so I had it check here and just output the grade
     printf("\nYou got %d out of 25 correct for a grade of 0%%", correctAnswers); //output grade
   }
@@ -274,8 +275,9 @@ int main(void) { //define main function
     //if you get any grade other than 0%:
     grade = 0; //initialize grade var
     correctFloat = correctAnswers; //initialize correctFloat var
+    //I was having an error where the correctAnswers variable wasn't returning a value when divided by 25, so I made a new float variable of the same value
     grade = correctFloat/25; //find grade
-    grade = grade * 100; //find grade
+    grade = grade * 100; //convert to percent
     printf("\nYou got %d out of 25 correct for a grade of %.0f%%", correctAnswers, grade); //output grade
   }
 
