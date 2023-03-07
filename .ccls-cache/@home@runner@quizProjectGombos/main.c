@@ -7,6 +7,7 @@
 
 int main(void) { //define main function
   int correctAnswers; //intialize varialbe as integer
+  float correctFloat;
   float grade; //intialize varialbe as float
   correctAnswers = 0; //update correctAnswers var
   char answer; //intialize varialbe as character
@@ -262,9 +263,21 @@ int main(void) { //define main function
     printf("You are incorrect, the correct answer was:\n\tf: Oceania\n"); //tell user correct answer
   }
 
-  grade = correctAnswers/25; //find grade
-  grade = grade * 100; //find grade
-  printf("\nYou got %d out of 25 correct for a grade of %.02f%%", correctAnswers, grade); //output grade
+  if (correctAnswers == 0) {
+    //if the user got 0%:
+    //I was having an error when user gets 0/25, so I had it check here and just output the grade
+    printf("\nYou got %d out of 25 correct for a grade of 0%%", correctAnswers); //output grade
+  }
+  else {
+    //if you get any grade other than 0%:
+    grade = 0; //initialize grade var
+    correctFloat = correctAnswers; //initialize correctFloat var
+    grade = correctFloat/25; //find grade
+    grade = grade * 100; //find grade
+    printf("\nYou got %d out of 25 correct for a grade of %.0f%%", correctAnswers, grade); //output grade
+  }
+
+  printf("\nProgram Complete! I hope you did well!"); //output statement
   
   return 0;
 }
